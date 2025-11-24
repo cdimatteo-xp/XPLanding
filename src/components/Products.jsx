@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
-    Shield, AlertTriangle, Lock, Landmark, Check, CheckCircle,
+    Shield, AlertTriangle, Lock, Landmark, Check, 
     Server, TrendingUp, Search, FileText, 
     Users, PieChart, RefreshCw, Globe, Scale,
     BarChart3, BrainCircuit, ClipboardCheck,
     LayoutDashboard, BookOpenCheck, Activity,
     ScanFace, Network, Zap,
-    Coins, Briefcase, ScrollText, Database // Nuevos iconos para Fiducia
+    Coins, Briefcase, ScrollText, FileCheck2,
+    ArrowRight
 } from 'lucide-react';
 
 const Products = () => {
-    const [activeSystem, setActiveSystem] = useState('e-ACM');
-
     return (
         <section id="sistemas" className="py-24 bg-slate-950 text-white relative overflow-hidden">
             {/* Background Noise/Texture */}
@@ -30,7 +29,9 @@ const Products = () => {
 
                 <div className="space-y-32">
                     
+                    {/* ========================================= */}
                     {/* 1. e-ACM: AUDITORÍA (Verde/Lime) */}
+                    {/* ========================================= */}
                     <div className="relative">
                         <div className="flex flex-col md:flex-row items-baseline gap-4 mb-8 border-b border-slate-800 pb-4">
                             <h3 className="text-3xl font-bold text-white flex items-center gap-3">
@@ -40,15 +41,14 @@ const Products = () => {
                             <p className="text-lime-400 font-medium ml-auto">Líder en Auditoría Continua</p>
                         </div>
                         
-                        {/* Storytelling e-ACM */}
+                        {/* Storytelling */}
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
-                            {/* Columna Izquierda */}
                             <div className="lg:col-span-4 flex flex-col justify-center">
                                 <h4 className="text-2xl font-bold text-white mb-4">
                                     Evolución tecnológica para la Auditoría Interna.
                                 </h4>
                                 <p className="text-slate-400 mb-8 leading-relaxed">
-                                    Potenciada por modelos estadísticos y de Inteligencia Artificial, e-ACM.core permite no solo estandarizar metodologías, sino automatizar tareas de control en forma continua y remota.
+                                    Potenciada por modelos estadísticos y de Inteligencia Artificial, <strong>e-ACM.core</strong> permite no solo estandarizar metodologías, sino automatizar tareas de control en forma continua y remota.
                                 </p>
                                 <div className="space-y-3">
                                     <div className="flex items-center gap-3 text-sm text-slate-300">
@@ -66,7 +66,6 @@ const Products = () => {
                                 </div>
                             </div>
 
-                            {/* Columna Derecha */}
                             <div className="lg:col-span-8 space-y-4">
                                 <div className="bg-slate-900 p-6 rounded-xl border border-slate-800 flex flex-col sm:flex-row gap-6 hover:border-lime-500/30 transition group">
                                     <div className="bg-lime-500/10 p-4 rounded-lg flex items-center justify-center text-lime-400 w-16 h-16 shrink-0 group-hover:scale-110 transition-transform">
@@ -106,13 +105,13 @@ const Products = () => {
                             </div>
                         </div>
 
-                        {/* Planes Cards */}
-                        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                        {/* Planes Cards e-ACM */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
                             {[
-                                { name: 'Básico Pro', features: ['Gestión de auditorías', 'Seguimiento de observaciones', 'Interacción con auditados'] },
-                                { name: 'Avanzado', features: ['Planificación anual', 'Reporting customizado', 'Soporte especializado'], highlight: true },
-                                { name: 'Premium', features: ['Matriz de riesgos dinámica', 'Muestreo estadístico', 'Base de conocimiento'] },
-                                { name: 'Auditoría 360', features: ['Monitoreo continuo', 'Data Analytics & IA', 'Prioridad de soporte'] }
+                                { name: 'Básico Pro', features: ['Auditoría y seguimiento', 'Muestreo básico', 'Respuestas de auditados', 'Soporte Mesa de Ayuda (48hs)'] },
+                                { name: 'Avanzado', features: ['Todo lo de Básico Pro', 'Planificación Estándar', 'Matriz de Riesgo & Time Reports', '3 Reportes Customizados', 'Soporte + 10hs/mes'], highlight: true },
+                                { name: 'Premium', features: ['Todo lo de Avanzado', 'Matriz de Riesgos Dinámica', 'Muestreo Avanzado', 'Autoevaluación de Auditados', '5 Reportes Custom', 'Soporte + 20hs/mes'] },
+                                { name: 'Auditoría 360', features: ['Todo lo de Premium', 'Inteligencia Artificial', 'Data Analytics', '10 Reportes Customizados', 'Soporte + 40hs/mes'] }
                             ].map((plan, idx) => (
                                 <div key={idx} className={`relative p-6 rounded-2xl border flex flex-col hover:transform hover:-translate-y-1 transition duration-300 ${plan.highlight ? 'border-lime-500 bg-lime-500/5 shadow-[0_0_30px_rgba(132,204,22,0.15)]' : 'border-slate-800 bg-slate-900/50'} hover:border-lime-500/50`}>
                                     {plan.highlight && <div className="absolute top-0 right-0 bg-lime-600 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-2xl">RECOMENDADO</div>}
@@ -125,12 +124,19 @@ const Products = () => {
                                             </li>
                                         ))}
                                     </ul>
+                                    <div className="mt-6 pt-4 border-t border-slate-800/50 flex justify-end">
+                                        <a href="#contacto" className="flex items-center gap-1 text-slate-500 text-xs hover:text-white transition group">
+                                            Consultar valor <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform"/>
+                                        </a>
+                                    </div>
                                 </div>
                             ))}
                         </div>
                     </div>
 
+                    {/* ========================================= */}
                     {/* 2. e-ACR: RIESGOS (Naranja/Amber) */}
+                    {/* ========================================= */}
                     <div className="relative">
                         <div className="absolute -left-4 -top-4 w-20 h-20 bg-amber-500/20 blur-3xl rounded-full"></div>
                         <div className="flex flex-col md:flex-row items-baseline gap-4 mb-8 border-b border-slate-800 pb-4 relative z-10">
@@ -148,7 +154,7 @@ const Products = () => {
                                     Visión unificada para la Gestión de Riesgos Corporativos.
                                 </h4>
                                 <p className="text-slate-400 mb-8 leading-relaxed">
-                                    e-ACR.core integra las verticales críticas de riesgo (Operacional, Tecnológico y Crediticio) bajo un mismo estándar de control, alineando su organización con normativas internacionales.
+                                    <strong>e-ACR.core</strong> integra las verticales críticas de riesgo (Operacional, Tecnológico y Crediticio) bajo un mismo estándar de control, alineando su organización con normativas internacionales.
                                 </p>
                                 <div className="space-y-3">
                                     <div className="flex items-center gap-3 text-sm text-slate-300">
@@ -205,31 +211,37 @@ const Products = () => {
                             </div>
                         </div>
 
-                        {/* Módulos Específicos (Cards Verticales) */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {/* Planes Cards e-ACR (NUEVO) */}
+                        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {[
-                                { title: 'Riesgo Operacional', code: 'e-ACM.rsk', icon: <TrendingUp />, desc: 'Gestión integral de riesgos operativos y procesos. Alineado a normas de Entidades Financieras.' },
-                                { title: 'Riesgo Tecnológico', code: 'e-ACM.rit', icon: <Server />, desc: 'Gestión de Activos de Información (IT), vulnerabilidades y amenazas basada en ISO 27005.' },
-                                { title: 'Riesgo Crediticio', code: 'e-CLM.net', icon: <PieChart />, desc: 'Sistema experto para análisis de carteras, scoring de clientes y seguimiento de garantías y mora.' }
-                            ].map((mod, idx) => (
-                                <div key={idx} className="group relative bg-slate-900 rounded-2xl p-8 border border-slate-800 hover:border-amber-500/50 transition-all duration-300">
-                                    <div className="absolute inset-0 bg-gradient-to-b from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
-                                    <div className="relative z-10">
-                                        <div className="flex justify-between items-start mb-6">
-                                            <div className="p-3 rounded-xl bg-amber-900/30 text-amber-400 group-hover:scale-110 transition-transform">
-                                                {mod.icon}
-                                            </div>
-                                            <span className="text-xs font-mono text-slate-500 border border-slate-700 px-2 py-1 rounded">{mod.code}</span>
-                                        </div>
-                                        <h4 className="text-xl font-bold text-white mb-3">{mod.title}</h4>
-                                        <p className="text-slate-400 text-sm leading-relaxed">{mod.desc}</p>
+                                { name: 'Risk Essentials', features: ['Foco: Riesgo Operativo (e-ACM.rsk)', 'Matriz de Calor & Mapa de Riesgos', 'Reporte de Incidentes', 'Soporte Estándar (48hs)'] },
+                                { name: 'Risk Professional', features: ['Todo lo de Essentials', 'Foco: Riesgo Tecnológico (e-ACM.rit)', 'Inventario de Activos IT & Vulnerabilidades', 'Normativa ISO 27005', 'Soporte + 10hs Consultoría'], highlight: true },
+                                { name: 'Integral Suite', features: ['Todo lo de Professional', 'Foco: Riesgo Crediticio (e-CLM.net)', 'Scoring Crediticio & Mora', 'Tablero Integral 360°', 'Soporte + 20hs Consultoría'] }
+                            ].map((plan, idx) => (
+                                <div key={idx} className={`relative p-6 rounded-2xl border flex flex-col hover:transform hover:-translate-y-1 transition duration-300 ${plan.highlight ? 'border-amber-500 bg-amber-500/5 shadow-[0_0_30px_rgba(245,158,11,0.15)]' : 'border-slate-800 bg-slate-900/50'} hover:border-amber-500/50`}>
+                                    {plan.highlight && <div className="absolute top-0 right-0 bg-amber-600 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-lg">RECOMENDADO</div>}
+                                    <h4 className="text-xl font-bold text-white mb-4">{plan.name}</h4>
+                                    <ul className="space-y-3 flex-grow">
+                                        {plan.features.map((f, i) => (
+                                            <li key={i} className="flex items-start text-sm text-slate-300">
+                                                <Check size={16} className="text-amber-500 mr-2 mt-0.5 shrink-0" />
+                                                {f}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <div className="mt-6 pt-4 border-t border-slate-800/50 flex justify-end">
+                                        <a href="#contacto" className="flex items-center gap-1 text-slate-500 text-xs hover:text-white transition group">
+                                            Consultar valor <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform"/>
+                                        </a>
                                     </div>
                                 </div>
                             ))}
-                        </div>
+                        </div> */}
                     </div>
 
+                    {/* ========================================= */}
                     {/* 3. e-CML: LAVADO DE ACTIVOS (Cian/Cyan) */}
+                    {/* ========================================= */}
                     <div className="relative">
                         <div className="flex flex-col md:flex-row items-baseline gap-4 mb-10 border-b border-slate-800 pb-4">
                             <h3 className="text-3xl font-bold text-white flex items-center gap-3">
@@ -239,14 +251,14 @@ const Products = () => {
                             <p className="text-cyan-400 font-medium ml-auto">Cumplimiento Normativo (PLA/FT)</p>
                         </div>
 
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                            {/* Columna Izquierda: Descripción y Valor */}
+                        {/* Storytelling e-CML */}
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
                             <div className="lg:col-span-4 flex flex-col justify-center">
                                 <h4 className="text-2xl font-bold text-white mb-4">
                                     Inteligencia aplicada a la prevención de delitos financieros.
                                 </h4>
                                 <p className="text-slate-400 mb-8 leading-relaxed">
-                                    Cumpla con las normativas de la UIF y estándares internacionales. Nuestra solución integra monitoreo transaccional, calificación de riesgo y listas restrictivas en un solo ecosistema.
+                                    Cumpla con las normativas de la UIF y estándares internacionales. <strong>e-CML.core</strong> integra monitoreo transaccional, calificación de riesgo y listas restrictivas en un solo ecosistema.
                                 </p>
                                 <div className="space-y-3">
                                     <div className="flex items-center gap-3 text-sm text-slate-300">
@@ -264,7 +276,6 @@ const Products = () => {
                                 </div>
                             </div>
 
-                            {/* Columna Derecha: Módulos Detallados */}
                             <div className="lg:col-span-8 space-y-4">
                                 <div className="bg-slate-900 p-6 rounded-xl border border-slate-800 flex flex-col sm:flex-row gap-6 hover:border-cyan-500/30 transition group">
                                     <div className="bg-cyan-500/10 p-4 rounded-lg flex items-center justify-center text-cyan-400 w-16 h-16 shrink-0 group-hover:scale-110 transition-transform">
@@ -303,53 +314,79 @@ const Products = () => {
                                 </div>
                             </div>
                         </div>
+
+                        {/* Planes Cards e-CML */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            {[
+                                { name: 'Client Compliance', features: ['Cruce individual/masivo de clientes', 'Legajo Digital de Cliente', 'Importación Masiva de Datos', 'Listas PFT: RePET y ONU'] },
+                                { name: 'Due Diligence', features: ['Todo lo de Client Compliance', 'Importación Masiva de Operaciones', 'Alertas Tempranas Estándar', 'Matriz de Riesgo Estándar'], highlight: true },
+                                { name: 'Full Compliance', features: ['Todo lo de Due Diligence', 'Seguimiento de Casos', 'Actualización Automática de Listas', 'Modelos Predictivos', 'Actualización Normativa'] }
+                            ].map((plan, idx) => (
+                                <div key={idx} className={`relative p-6 rounded-2xl border flex flex-col hover:transform hover:-translate-y-1 transition duration-300 ${plan.highlight ? 'border-cyan-500 bg-cyan-500/5 shadow-[0_0_30px_rgba(6,182,212,0.15)]' : 'border-slate-800 bg-slate-900/50'} hover:border-cyan-500/50`}>
+                                    {plan.highlight && <div className="absolute top-0 right-0 bg-cyan-600 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-2xl">RECOMENDADO</div>}
+                                    <h4 className="text-xl font-bold text-white mb-4">{plan.name}</h4>
+                                    <ul className="space-y-3 flex-grow">
+                                        {plan.features.map((f, i) => (
+                                            <li key={i} className="flex items-start text-sm text-slate-300">
+                                                <Check size={16} className="text-cyan-500 mr-2 mt-0.5 shrink-0" />
+                                                {f}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <div className="mt-6 pt-4 border-t border-slate-800/50 flex justify-end">
+                                        <a href="#contacto" className="flex items-center gap-1 text-slate-500 text-xs hover:text-white transition group">
+                                            Consultar valor <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform"/>
+                                        </a>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
+                    {/* ========================================= */}
                     {/* 4. e-FIDUCIA: FIDUCIARIO (Púrpura/Purple) */}
+                    {/* ========================================= */}
                     <div className="relative">
-                        <div className="absolute -right-4 -bottom-4 w-32 h-32 bg-purple-500/10 blur-3xl rounded-full"></div>
                         <div className="flex flex-col md:flex-row items-baseline gap-4 mb-10 border-b border-slate-800 pb-4 relative z-10">
                             <h3 className="text-3xl font-bold text-white flex items-center gap-3">
                                 <span className="p-2 rounded-lg bg-purple-500/10 text-purple-400"><Landmark size={32} /></span>
                                 e-FIDUCIA.core <span className="text-slate-500 text-2xl font-normal">| Sistema Core Fiduciario</span>
                             </h3>
-                            <p className="text-purple-400 font-medium ml-auto">Administración Fiduciaria End-to-End</p>
+                            <p className="text-purple-400 font-medium ml-auto">Administración End-to-End</p>
                         </div>
 
-                        {/* Storytelling e-FIDUCIA (Mejorado) */}
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                            {/* Columna Izquierda: Storytelling */}
+                        {/* Storytelling e-FIDUCIA */}
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
                             <div className="lg:col-span-4 flex flex-col justify-center">
                                 <h4 className="text-2xl font-bold text-white mb-4">
                                     Potencia y flexibilidad para el Administrador Fiduciario.
                                 </h4>
                                 <p className="text-slate-400 mb-8 leading-relaxed">
-                                    e-FIDUCIA.core no es solo un sistema de registro; es una plataforma de gestión integral que automatiza la operación diaria, desde la estructuración financiera hasta la rendición de cuentas.
+                                    <strong>e-FIDUCIA.core</strong> no es solo un sistema de registro; es una plataforma de gestión integral que automatiza la operación diaria, desde la estructuración financiera hasta la rendición de cuentas.
                                 </p>
                                 <div className="space-y-3">
                                     <div className="flex items-center gap-3 text-sm text-slate-300">
-                                        <div className="w-8 h-8 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-400 shrink-0"><Server size={16}/></div>
-                                        <span>Web Nativa & Cloud Ready</span>
+                                        <div className="w-8 h-8 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-400 shrink-0"><ScanFace size={16}/></div>
+                                        <span>Gestión de Prospects (Originación)</span>
                                     </div>
                                     <div className="flex items-center gap-3 text-sm text-slate-300">
-                                        <div className="w-8 h-8 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-400 shrink-0"><Database size={16}/></div>
-                                        <span>Multi-Base de Datos</span>
+                                        <div className="w-8 h-8 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-400 shrink-0"><Coins size={16}/></div>
+                                        <span>Emisión de Deuda</span>
                                     </div>
                                     <div className="flex items-center gap-3 text-sm text-slate-300">
-                                        <div className="w-8 h-8 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-400 shrink-0"><Shield size={16}/></div>
-                                        <span>Seguridad basada en Roles</span>
+                                        <div className="w-8 h-8 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-400 shrink-0"><FileCheck2 size={16}/></div>
+                                        <span>Motor Contable Automático</span>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Columna Derecha: Módulos Detallados */}
                             <div className="lg:col-span-8 space-y-4">
                                 <div className="bg-slate-900 p-6 rounded-xl border border-slate-800 flex flex-col sm:flex-row gap-6 hover:border-purple-500/30 transition group">
                                     <div className="bg-purple-500/10 p-4 rounded-lg flex items-center justify-center text-purple-400 w-16 h-16 shrink-0 group-hover:scale-110 transition-transform">
                                         <Briefcase size={28} />
                                     </div>
                                     <div>
-                                        <h5 className="text-lg font-bold text-white mb-2">Originación y Administración</h5>
+                                        <h5 className="text-lg font-bold text-white mb-2">Administración del Ciclo de Vida</h5>
                                         <p className="text-slate-400 text-sm mb-3">
                                             Gestión de "prospects" y eventos previos al inicio. Administración centralizada de contratos, seguros, garantías y trazabilidad total de participantes (Fiduciantes, Beneficiarios, Clientes).
                                         </p>
@@ -361,9 +398,9 @@ const Products = () => {
                                         <Coins size={28} />
                                     </div>
                                     <div>
-                                        <h5 className="text-lg font-bold text-white mb-2">Ingeniería Financiera</h5>
+                                        <h5 className="text-lg font-bold text-white mb-2">Ingeniería Financiera y Deuda</h5>
                                         <p className="text-slate-400 text-sm mb-3">
-                                            Soporte total para Fideicomisos Financieros: emisión de deuda, gestión de títulos y cálculo automático de amortizaciones (Francés, Alemán, Americano) e inversiones.
+                                            Soporte nativo para Fideicomisos Financieros: emisión de deuda, gestión de títulos, cálculo automático de amortizaciones (Francés, Alemán, Americano) y gestión de inversiones.
                                         </p>
                                     </div>
                                 </div>
@@ -381,8 +418,34 @@ const Products = () => {
                                 </div>
                             </div>
                         </div>
+
+                        {/* Planes Cards e-FIDUCIA */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                            {[
+                                { name: 'Fides Lite', features: ['Hasta 5 Fideicomisos', 'Administración de Activos', 'Gestión de Pagos (sin impuestos)', 'Contabilidad Básica', '1 Reporte Customizado', 'Soporte vía Email (48hs)'] },
+                                { name: 'Fiducia Plus', features: ['Fideicomisos Ilimitados', 'e-FIDUCIA.core Completo', 'Gestión Financiera Avanzada', 'Hasta 5 Reportes Custom', 'Soporte Prioritario'], highlight: true }
+                            ].map((plan, idx) => (
+                                <div key={idx} className={`relative p-6 rounded-2xl border flex flex-col hover:transform hover:-translate-y-1 transition duration-300 ${plan.highlight ? 'border-purple-500 bg-purple-500/5 shadow-[0_0_30px_rgba(168,85,247,0.15)]' : 'border-slate-800 bg-slate-900/50'} hover:border-purple-500/50`}>
+                                    {plan.highlight && <div className="absolute top-0 right-0 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-2xl">RECOMENDADO</div>}
+                                    <h4 className="text-xl font-bold text-white mb-4">{plan.name}</h4>
+                                    <ul className="space-y-3 flex-grow">
+                                        {plan.features.map((f, i) => (
+                                            <li key={i} className="flex items-start text-sm text-slate-300">
+                                                <Check size={16} className="text-purple-500 mr-2 mt-0.5 shrink-0" />
+                                                {f}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <div className="mt-6 pt-4 border-t border-slate-800/50 flex justify-end">
+                                        <a href="#contacto" className="flex items-center gap-1 text-slate-500 text-xs hover:text-white transition group">
+                                            Consultar valor <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform"/>
+                                        </a>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                         
-                        <div className="bg-purple-900/20 border-t border-purple-500/20 p-4 text-center mt-8 rounded-b-2xl">
+                        <div className="bg-purple-900/20 border-t border-purple-500/20 p-4 text-center mt-8 rounded-2xl">
                             <p className="text-purple-300 text-sm font-medium">
                                 Utilizado para administrar el ciclo de vida completo de fideicomisos públicos y privados de alta complejidad.
                             </p>

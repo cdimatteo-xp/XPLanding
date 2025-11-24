@@ -5,17 +5,46 @@ Todos los cambios notables de este proyecto serán documentados en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/),
 y este proyecto adhiere a [Versionado Semántico](https://semver.org/lang/es/).
 
-## [1.1.0] - 2025-11-24
+## [1.2.0] - 2025-11-24
 
-### Añadido
-- Sección "Nosotros" completamente rediseñada con información de las socias fundadoras
+### Añadido - Componente Products
+- Sección storytelling expandida para cada producto con descripciones detalladas
+- Planes de suscripción estructurados con features específicas para e-ACM (4 planes)
+- Planes de suscripción para e-CML (3 planes: Client Compliance, Due Diligence, Full Compliance)
+- Planes de suscripción para e-FIDUCIA (2 planes: Fides Lite, Fiducia Plus)
+- Botones "Consultar valor" con enlaces a la sección de contacto
+- Badges "RECOMENDADO" en planes destacados con efectos visuales
+- Iconos adicionales importados de lucide-react (BrainCircuit, LayoutDashboard, etc.)
+- Textura de fondo sutil en la sección de productos
+- Descripciones detalladas de funcionalidades por módulo
+
+### Modificado - Componente Products
+- Renombrado de productos de e-ACM, e-ACR, e-CML, e-FIDUCIA a e-ACM.core, e-ACR.core, e-CML.core, e-FIDUCIA.core
+- Reorganización visual con layout mejorado (storytelling + planes)
+- Features de planes más específicas con niveles incrementales ("Todo lo de...")
+- Mejoras en hover effects y transiciones en tarjetas de planes
+- Optimización de grid layouts para mejor responsividad
+- Cards de storytelling con iconos animados al hover
+- Eliminado estado activeSystem y código no utilizado
+- Mejorada jerarquía visual con separadores y comentarios organizados
+
+### Añadido - Sección Nosotros
 - Perfiles detallados de Carolina Di Matteo (Ingeniera en Informática) y Carolina C. Castro (Actuaria)
 - Integración de links a LinkedIn para ambas socias con botones interactivos
-- Áreas de expertise específicas para cada socia
+- Áreas de expertise específicas para cada socia (4 puntos por socia)
 - Diseño de tarjetas mejorado con gradientes diferenciados (azul/índigo)
 - Historia del legado familiar (segunda generación)
 - Sección ADN Corporativo con métricas visuales (20+ años de experiencia, certificación IRAM)
 - Tarjetas visuales con iconos y estadísticas de la empresa
+
+### Infraestructura
+- GitHub Actions workflow para deployment automático en GitHub Pages
+- Configuración completa de CI/CD
+
+## [1.1.0] - 2025-11-24
+
+### Añadido
+- Sección "Nosotros" completamente rediseñada con información de las socias fundadoras
 - GitHub Actions workflow para deployment automático en GitHub Pages
 - Configuración completa de CI/CD
 
