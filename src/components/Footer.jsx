@@ -14,9 +14,9 @@ const Footer = () => {
                             Tecnología y conocimiento aplicados al crecimiento de su negocio.
                         </p>
                         <div className="flex space-x-4">
-                            <a href="#" className="w-8 h-8 rounded bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition"><Facebook size={16} /></a>
-                            <a href="#" className="w-8 h-8 rounded bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-400 hover:text-white transition"><Twitter size={16} /></a>
                             <a href="https://ar.linkedin.com/company/x-project-sa" className="w-8 h-8 rounded bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-700 hover:text-white transition"><Linkedin size={16} /></a>
+                            <a href="https://x.com/XProjectSA/" className="w-8 h-8 rounded bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-400 hover:text-white transition"><Twitter size={16} /></a>
+                            <a href="https://www.facebook.com/Xprojectsa/" className="w-8 h-8 rounded bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition"><Facebook size={16} /></a>
                             <a href="https://github.com/X-Project-SA" className="w-8 h-8 rounded bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-gray-700 hover:text-white transition"><Github size={16} /></a>
                         </div>
                     </div>
