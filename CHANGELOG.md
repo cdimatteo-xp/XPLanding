@@ -5,6 +5,48 @@ Todos los cambios notables de este proyecto serán documentados en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/),
 y este proyecto adhiere a [Versionado Semántico](https://semver.org/lang/es/).
 
+## [1.1.0] - 2025-11-24
+
+### Añadido
+- Sección "Nosotros" completamente rediseñada con información de las socias fundadoras
+- Perfiles detallados de Carolina Di Matteo (Ingeniera en Informática) y Carolina C. Castro (Actuaria)
+- Integración de links a LinkedIn para ambas socias con botones interactivos
+- Áreas de expertise específicas para cada socia
+- Diseño de tarjetas mejorado con gradientes diferenciados (azul/índigo)
+- Historia del legado familiar (segunda generación)
+- Sección ADN Corporativo con métricas visuales (20+ años de experiencia, certificación IRAM)
+- Tarjetas visuales con iconos y estadísticas de la empresa
+- GitHub Actions workflow para deployment automático en GitHub Pages
+- Configuración completa de CI/CD
+
+### Modificado
+- Actualizado Tailwind CSS de v3.4.0 a v4.1.0
+- Migrado configuración de Tailwind a TypeScript (tailwind.config.ts)
+- Actualizado sintaxis de importación de Tailwind CSS (@import "tailwindcss")
+- Reemplazado `tailwindcss` plugin por `@tailwindcss/postcss` en PostCSS
+- Componente Products: eliminadas interpolaciones dinámicas de colores
+- Implementado mapeo estático de colores para compatibilidad con Tailwind v4
+- Mejorada UX/UI del componente About con efectos hover y transiciones
+- Añadidos colores completos (blue, indigo, cyan, emerald, slate, lime, amber, purple) en Tailwind config
+- Configurado `base: '/XPLanding/'` en vite.config.js para GitHub Pages
+
+### Corregido
+- Fix de importación faltante `CheckCircle` en componente Products
+- Sincronización de package-lock.json con package.json
+- Corrección de workflow de GitHub Actions (npm ci → npm install)
+- Problemas de renderizado de estilos en producción
+- Errores de compilación de Tailwind CSS v4
+
+### Tecnologías Actualizadas
+- Tailwind CSS: 3.4.0 → 4.1.0
+- @tailwindcss/postcss: 4.1.0 (nuevo)
+- Vite: 5.0.8 → 5.4.21
+
+### Infraestructura
+- GitHub Actions configurado para deployment automático
+- Optimización de build para producción
+- Configuración de GitHub Pages con workflow personalizado
+
 ## [1.0.0] - 2025-11-23
 
 ### Añadido
