@@ -18,6 +18,7 @@ const Navbar = () => {
         { name: 'Servicios', href: '#servicios' },
         { name: 'Sistemas', href: '#sistemas' },
         { name: 'Industrias', href: '#industrias' },
+        { name: 'Academia', href: '#capacitacion' },
         { name: 'Nosotros', href: '#nosotros' },
     ];
 

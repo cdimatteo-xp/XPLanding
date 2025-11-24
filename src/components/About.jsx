@@ -116,11 +116,11 @@ const About = () => {
                             <div className="p-8 relative z-10">
                                 <div className="flex justify-between items-start mb-6">
                                     <div className="w-20 h-20 rounded-full bg-slate-100 border-4 border-white shadow-md flex items-center justify-center text-slate-400 overflow-hidden group-hover:border-indigo-50 transition-colors">
-                                        <User size={36} strokeWidth={1.5} />
-                                        {/* <img src="/path-to-photo-carolina-cc.jpg" alt="Carolina C. Castro" className="w-full h-full object-cover" /> */}
+                                        {/* <User size={36} strokeWidth={1.5} /> */}
+                                        <img src="/XPLanding/CCC.jpeg" alt="Carolina C. Castro" className="w-full h-full object-cover" />
                                     </div>
                                     <a 
-                                        href="https://www.linkedin.com/in/carolina-cristina-castro" 
+                                        href="https://www.linkedin.com/in/carolinacristinacastro" 
                                         target="_blank" 
                                         rel="noopener noreferrer"
                                         className="p-2 bg-indigo-50 text-indigo-600 rounded-lg hover:bg-indigo-600 hover:text-white transition-colors"
@@ -159,8 +159,9 @@ const About = () => {
                             <div className="p-8 relative z-10">
                                 <div className="flex justify-between items-start mb-6">
                                     <div className="w-20 h-20 rounded-full bg-slate-100 border-4 border-white shadow-md flex items-center justify-center text-slate-400 overflow-hidden group-hover:border-blue-50 transition-colors">
-                                        <User size={36} strokeWidth={1.5} />
+                                        {/* <User size={36} strokeWidth={1.5} /> */}
                                         {/* <img src="/path-to-photo-carolina-dm.jpg" alt="Carolina Di Matteo" className="w-full h-full object-cover" /> */}
+                                        <img src="/XPLanding/CDM.png" alt="Carolina Di Matteo" className="w-full h-full object-cover" />
                                     </div>
                                     <a 
                                         href="https://www.linkedin.com/in/carolina-di-matteo" 

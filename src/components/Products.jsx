@@ -7,7 +7,9 @@ import {
     LayoutDashboard, BookOpenCheck, Activity,
     ScanFace, Network, Zap,
     Coins, Briefcase, ScrollText, FileCheck2,
-    ArrowRight
+    ArrowRight,
+    ListChecks,
+    FolderOpenDot // Icono para Papeles de Trabajo
 } from 'lucide-react';
 
 const Products = () => {
@@ -48,20 +50,20 @@ const Products = () => {
                                     Evolución tecnológica para la Auditoría Interna.
                                 </h4>
                                 <p className="text-slate-400 mb-8 leading-relaxed">
-                                    Potenciada por modelos estadísticos y de Inteligencia Artificial, <strong>e-ACM.core</strong> permite no solo estandarizar metodologías, sino automatizar tareas de control en forma continua y remota.
+                                    Diseñada para la excelencia operativa, <strong>e-ACM.core</strong> digitaliza el proceso de auditoría de punta a punta. Facilita la planificación basada en riesgos, la ejecución estandarizada y el seguimiento automático de hallazgos.
                                 </p>
                                 <div className="space-y-3">
                                     <div className="flex items-center gap-3 text-sm text-slate-300">
-                                        <div className="w-8 h-8 rounded-full bg-lime-500/10 flex items-center justify-center text-lime-400 shrink-0"><Server size={16}/></div>
-                                        <span>Web Nativa & Cloud Ready</span>
+                                        <div className="w-8 h-8 rounded-full bg-lime-500/10 flex items-center justify-center text-lime-400 shrink-0"><Activity size={16}/></div>
+                                        <span>Auditoría Continua (No Presencial)</span>
                                     </div>
                                     <div className="flex items-center gap-3 text-sm text-slate-300">
-                                        <div className="w-8 h-8 rounded-full bg-lime-500/10 flex items-center justify-center text-lime-400 shrink-0"><Scale size={16}/></div>
-                                        <span>Estandarización Metodológica</span>
+                                        <div className="w-8 h-8 rounded-full bg-lime-500/10 flex items-center justify-center text-lime-400 shrink-0"><FolderOpenDot size={16}/></div>
+                                        <span>Papeles de Trabajo Digitales</span>
                                     </div>
                                     <div className="flex items-center gap-3 text-sm text-slate-300">
-                                        <div className="w-8 h-8 rounded-full bg-lime-500/10 flex items-center justify-center text-lime-400 shrink-0"><BarChart3 size={16}/></div>
-                                        <span>Reporting Dinámico</span>
+                                        <div className="w-8 h-8 rounded-full bg-lime-500/10 flex items-center justify-center text-lime-400 shrink-0"><ListChecks size={16}/></div>
+                                        <span>Gestión Integral del Ciclo de Vida</span>
                                     </div>
                                 </div>
                             </div>
@@ -72,21 +74,21 @@ const Products = () => {
                                         <ClipboardCheck size={28} />
                                     </div>
                                     <div>
-                                        <h5 className="text-lg font-bold text-white mb-2">Ciclo de Vida Integral</h5>
+                                        <h5 className="text-lg font-bold text-white mb-2">Estandarización Metodológica</h5>
                                         <p className="text-slate-400 text-sm mb-3">
-                                            Gestión total desde la Planificación Anual y asignación de recursos, hasta la ejecución de programas de trabajo, emisión automática de informes y seguimiento de observaciones.
+                                            Centralice todo el proceso: desde la Planificación Anual y asignación de recursos, hasta la ejecución de programas de trabajo, documentación de evidencias y emisión de informes.
                                         </p>
                                     </div>
                                 </div>
 
                                 <div className="bg-slate-900 p-6 rounded-xl border border-slate-800 flex flex-col sm:flex-row gap-6 hover:border-lime-500/30 transition group">
                                     <div className="bg-lime-500/10 p-4 rounded-lg flex items-center justify-center text-lime-400 w-16 h-16 shrink-0 group-hover:scale-110 transition-transform">
-                                        <BrainCircuit size={28} />
+                                        <BarChart3 size={28} />
                                     </div>
                                     <div>
-                                        <h5 className="text-lg font-bold text-white mb-2">Inteligencia & Automatización</h5>
+                                        <h5 className="text-lg font-bold text-white mb-2">Análisis de Datos & Control</h5>
                                         <p className="text-slate-400 text-sm mb-3">
-                                            Módulos de modelización predictiva y monitoreo dinámico para detectar anomalías en tiempo real. Auditoría basada en datos (Data-Driven Audit) y no solo en muestras.
+                                            Herramientas de monitoreo dinámico para detectar anomalías y excepciones en tiempo real. Auditoría basada en datos (Data-Driven) para superar las limitaciones del muestreo tradicional.
                                         </p>
                                     </div>
                                 </div>
@@ -96,9 +98,9 @@ const Products = () => {
                                         <TrendingUp size={28} />
                                     </div>
                                     <div>
-                                        <h5 className="text-lg font-bold text-white mb-2">Valor Agregado & KPIs</h5>
+                                        <h5 className="text-lg font-bold text-white mb-2">Trazabilidad & Seguimiento</h5>
                                         <p className="text-slate-400 text-sm mb-3">
-                                            Registro del valor patrimonial/financiero aportado por auditoría. Tableros de control gerenciales para visualizar el estado de riesgos y el cumplimiento de objetivos.
+                                            Registro inalterable de la actividad del auditor. Workflow automatizado para el seguimiento de observaciones, planes de acción y compromisos con los auditados.
                                         </p>
                                     </div>
                                 </div>
@@ -211,15 +213,15 @@ const Products = () => {
                             </div>
                         </div>
 
-                        {/* Planes Cards e-ACR (NUEVO) */}
-                        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {/* Planes Cards e-ACR */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {[
                                 { name: 'Risk Essentials', features: ['Foco: Riesgo Operativo (e-ACM.rsk)', 'Matriz de Calor & Mapa de Riesgos', 'Reporte de Incidentes', 'Soporte Estándar (48hs)'] },
                                 { name: 'Risk Professional', features: ['Todo lo de Essentials', 'Foco: Riesgo Tecnológico (e-ACM.rit)', 'Inventario de Activos IT & Vulnerabilidades', 'Normativa ISO 27005', 'Soporte + 10hs Consultoría'], highlight: true },
                                 { name: 'Integral Suite', features: ['Todo lo de Professional', 'Foco: Riesgo Crediticio (e-CLM.net)', 'Scoring Crediticio & Mora', 'Tablero Integral 360°', 'Soporte + 20hs Consultoría'] }
                             ].map((plan, idx) => (
                                 <div key={idx} className={`relative p-6 rounded-2xl border flex flex-col hover:transform hover:-translate-y-1 transition duration-300 ${plan.highlight ? 'border-amber-500 bg-amber-500/5 shadow-[0_0_30px_rgba(245,158,11,0.15)]' : 'border-slate-800 bg-slate-900/50'} hover:border-amber-500/50`}>
-                                    {plan.highlight && <div className="absolute top-0 right-0 bg-amber-600 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-lg">RECOMENDADO</div>}
+                                    {plan.highlight && <div className="absolute top-0 right-0 bg-amber-600 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-2xl">RECOMENDADO</div>}
                                     <h4 className="text-xl font-bold text-white mb-4">{plan.name}</h4>
                                     <ul className="space-y-3 flex-grow">
                                         {plan.features.map((f, i) => (
@@ -236,7 +238,7 @@ const Products = () => {
                                     </div>
                                 </div>
                             ))}
-                        </div> */}
+                        </div>
                     </div>
 
                     {/* ========================================= */}
@@ -271,7 +273,7 @@ const Products = () => {
                                     </div>
                                     <div className="flex items-center gap-3 text-sm text-slate-300">
                                         <div className="w-8 h-8 rounded-full bg-cyan-500/10 flex items-center justify-center text-cyan-400 shrink-0"><Activity size={16}/></div>
-                                        <span>Modelos Estadísticos</span>
+                                        <span>Monitoreo Transaccional</span>
                                     </div>
                                 </div>
                             </div>
@@ -423,7 +425,7 @@ const Products = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                             {[
                                 { name: 'Fides Lite', features: ['Hasta 5 Fideicomisos', 'Administración de Activos', 'Gestión de Pagos (sin impuestos)', 'Contabilidad Básica', '1 Reporte Customizado', 'Soporte vía Email (48hs)'] },
-                                { name: 'Fiducia Plus', features: ['Fideicomisos Ilimitados', 'e-FIDUCIA.core Completo', 'Gestión Financiera Avanzada', 'Hasta 5 Reportes Custom', 'Soporte Prioritario'], highlight: true }
+                                { name: 'Fiducia Plus', features: ['Fideicomisos Ilimitados', 'e-Fiducia.core Completo', 'Gestión Financiera Avanzada', 'Hasta 5 Reportes Custom', 'Soporte Prioritario'], highlight: true }
                             ].map((plan, idx) => (
                                 <div key={idx} className={`relative p-6 rounded-2xl border flex flex-col hover:transform hover:-translate-y-1 transition duration-300 ${plan.highlight ? 'border-purple-500 bg-purple-500/5 shadow-[0_0_30px_rgba(168,85,247,0.15)]' : 'border-slate-800 bg-slate-900/50'} hover:border-purple-500/50`}>
                                     {plan.highlight && <div className="absolute top-0 right-0 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-2xl">RECOMENDADO</div>}
