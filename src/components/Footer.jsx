@@ -8,7 +8,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="col-span-1 md:col-span-1">
                         <div className="flex items-center gap-2 mb-4">
-                            <img src="/x_project_sa_dark.png" alt="X Project Logo" style={{ width: '12rem', height: 'auto' }} />
+                            <img src="/XPLanding/x_project_sa_dark.png" alt="X Project Logo" style={{ width: '12rem', height: 'auto' }} />
                         </div>
                         <p className="text-slate-400 text-sm mb-4">
                             Tecnología y conocimiento aplicados al crecimiento de su negocio.

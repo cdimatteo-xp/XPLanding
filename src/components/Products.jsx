@@ -4,6 +4,50 @@ import { Shield, AlertTriangle, Lock, Landmark, Check, CheckCircle, Server, Tren
 const Products = () => {
     const [activeSystem, setActiveSystem] = useState('e-ACM');
 
+    // Mapeo de clases de colores para evitar interpolación dinámica
+    const colorClasses = {
+        lime: {
+            bg: 'bg-lime-600',
+            bgHover: 'hover:bg-lime-500',
+            border: 'border-lime-500',
+            text: 'text-lime-400',
+            textDark: 'text-lime-500',
+            bgDot: 'bg-lime-500',
+            bgIcon: 'bg-lime-500/20',
+            shadow: 'shadow-[0_0_20px_rgba(132,204,22,0.5)]'
+        },
+        amber: {
+            bg: 'bg-amber-600',
+            bgHover: 'hover:bg-amber-500',
+            border: 'border-amber-500',
+            text: 'text-amber-400',
+            textDark: 'text-amber-500',
+            bgDot: 'bg-amber-500',
+            bgIcon: 'bg-amber-500/20',
+            shadow: 'shadow-[0_0_20px_rgba(245,158,11,0.5)]'
+        },
+        cyan: {
+            bg: 'bg-cyan-600',
+            bgHover: 'hover:bg-cyan-700',
+            border: 'border-cyan-500',
+            text: 'text-cyan-400',
+            textDark: 'text-cyan-500',
+            bgDot: 'bg-cyan-500',
+            bgIcon: 'bg-cyan-500/20',
+            shadow: 'shadow-[0_0_20px_rgba(6,182,212,0.5)]'
+        },
+        purple: {
+            bg: 'bg-purple-600',
+            bgHover: 'hover:bg-purple-700',
+            border: 'border-purple-500',
+            text: 'text-purple-400',
+            textDark: 'text-purple-500',
+            bgDot: 'bg-purple-500',
+            bgIcon: 'bg-purple-500/20',
+            shadow: 'shadow-[0_0_20px_rgba(168,85,247,0.5)]'
+        }
+    };
+
     const systems = {
         'e-ACM': {
             name: 'Audit Control Manager',
@@ -108,7 +152,7 @@ const Products = () => {
                             key={key}
                             onClick={() => setActiveSystem(key)}
                             className={`px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 flex items-center gap-2 border ${activeSystem === key
-                                ? `bg-${system.color}-600 border-${system.color}-500 text-white shadow-[0_0_20px_rgba(37,99,235,0.5)]`
+                                ? `${colorClasses[system.color].bg} ${colorClasses[system.color].border} text-white ${colorClasses[system.color].shadow}`
                                 : 'bg-slate-800 border-slate-700 text-slate-400 hover:bg-slate-700'
                                 }`}
                         >
@@ -125,7 +169,7 @@ const Products = () => {
                 <div className="animate-fade-in-up">
                     <div className="text-center mb-12">
                         <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                            {systems[activeSystem].name} <span className={`text-${systems[activeSystem].color}-400`}>| {systems[activeSystem].subtitle}</span>
+                            {systems[activeSystem].name} <span className={colorClasses[systems[activeSystem].color].text}>| {systems[activeSystem].subtitle}</span>
                         </h3>
                         <p className="text-slate-300 max-w-3xl mx-auto text-lg leading-relaxed">
                             {systems[activeSystem].desc}
@@ -140,7 +184,7 @@ const Products = () => {
                             {systems[activeSystem].plans.map((plan, index) => (
                                 <div key={index} className={`relative bg-slate-800/50 backdrop-blur-sm border rounded-2xl p-6 flex flex-col hover:transform hover:-translate-y-1 transition duration-300 ${plan.isPopular ? 'border-blue-500 shadow-lg shadow-blue-500/20' : 'border-slate-700'}`}>
                                     {plan.isPopular && (
-                                        <div className={`absolute top-0 right-0 bg-${systems[activeSystem].color}-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg`}>
+                                        <div className={`absolute top-0 right-0 ${colorClasses[systems[activeSystem].color].bg} text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg`}>
                                             RECOMENDADO
                                         </div>
                                     )}
@@ -156,7 +200,7 @@ const Products = () => {
                                             </li>
                                         ))}
                                     </ul>
-                                    <a href="#contacto" className={`w-full py-3 rounded-lg font-bold text-sm transition text-center ${plan.isPopular ? `bg-${systems[activeSystem].color}-600 text-white hover:bg-${systems[activeSystem].color}-500` : 'bg-slate-700 text-slate-300 hover:bg-slate-600'}`}>
+                                    <a href="#contacto" className={`w-full py-3 rounded-lg font-bold text-sm transition text-center ${plan.isPopular ? `${colorClasses[systems[activeSystem].color].bg} text-white ${colorClasses[systems[activeSystem].color].bgHover}` : 'bg-slate-700 text-slate-300 hover:bg-slate-600'}`}>
                                         Consultar Plan
                                     </a>
                                 </div>
@@ -168,11 +212,11 @@ const Products = () => {
                     {systems[activeSystem].modules && (
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {systems[activeSystem].modules.map((mod, index) => (
-                                <div key={index} className={`bg-slate-800 rounded-2xl p-1 border-t-4 border-${systems[activeSystem].color}-500 shadow-xl`}>
+                                <div key={index} className={`bg-slate-800 rounded-2xl p-1 border-t-4 ${colorClasses[systems[activeSystem].color].border} shadow-xl`}>
                                     <div className="bg-slate-900/90 rounded-xl p-6 h-full flex flex-col">
                                         <div className="flex items-center justify-between mb-4">
-                                            <span className={`text-xs font-bold text-${systems[activeSystem].color}-400 uppercase tracking-widest`}>{mod.type}</span>
-                                            <div className={`w-8 h-8 bg-${systems[activeSystem].color}-500/20 rounded-lg flex items-center justify-center text-${systems[activeSystem].color}-400`}>
+                                            <span className={`text-xs font-bold ${colorClasses[systems[activeSystem].color].text} uppercase tracking-widest`}>{mod.type}</span>
+                                            <div className={`w-8 h-8 ${colorClasses[systems[activeSystem].color].bgIcon} rounded-lg flex items-center justify-center ${colorClasses[systems[activeSystem].color].text}`}>
                                                 {index === 0 && <AlertTriangle size={18} />}
                                                 {index === 1 && <Server size={18} />}
                                                 {index === 2 && <TrendingUp size={18} />}
@@ -183,7 +227,7 @@ const Products = () => {
                                         <ul className="space-y-2 pt-4 border-t border-slate-800">
                                             {mod.features.map((feat, i) => (
                                                 <li key={i} className="flex items-start text-sm text-slate-300">
-                                                    <div className={`w-1.5 h-1.5 bg-${systems[activeSystem].color}-500 rounded-full mr-2 mt-1.5`} />
+                                                    <div className={`w-1.5 h-1.5 ${colorClasses[systems[activeSystem].color].bgDot} rounded-full mr-2 mt-1.5`} />
                                                     {feat}
                                                 </li>
                                             ))}
@@ -200,13 +244,13 @@ const Products = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                                 <div>
                                     <h4 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                                        {activeSystem === 'e-FIDUCIA' ? <Landmark className={`text-${systems[activeSystem].color}-500`} /> : <Lock className="text-cyan-500" />}
+                                        {activeSystem === 'e-FIDUCIA' ? <Landmark className={colorClasses[systems[activeSystem].color].textDark} /> : <Lock className="text-cyan-500" />}
                                         Funcionalidades Clave
                                     </h4>
                                     <ul className="space-y-4">
                                         {systems[activeSystem].features.map((feat, i) => (
                                             <li key={i} className="flex items-center text-slate-300 p-3 bg-slate-900/50 rounded-lg border border-slate-800/50">
-                                                <CheckCircle size={18} className={`mr-3 text-${systems[activeSystem].color}-500`} />
+                                                <CheckCircle size={18} className={`mr-3 ${colorClasses[systems[activeSystem].color].textDark}`} />
                                                 {feat}
                                             </li>
                                         ))}
@@ -228,7 +272,7 @@ const Products = () => {
                                         <p className="text-slate-300 mb-4 text-sm">
                                             Esta solución es utilizada por las principales entidades financieras y fiduciarias de la región.
                                         </p>
-                                        <a href="#contacto" className={`inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-${systems[activeSystem].color}-600 hover:bg-${systems[activeSystem].color}-700 transition w-full shadow-lg`}>
+                                        <a href="#contacto" className={`inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white ${colorClasses[systems[activeSystem].color].bg} ${colorClasses[systems[activeSystem].color].bgHover} transition w-full shadow-lg`}>
                                             Solicitar Presentación
                                         </a>
                                     </div>
