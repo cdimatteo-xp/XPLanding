@@ -1,32 +1,45 @@
-name: Deploy to Azure Static Web Apps
+name: Node.js CI/CD to Azure Web App
 
 on:
   push:
     branches:
-      - main
-  workflow_dispatch:
-
-permissions:
-  contents: read
+      - main  # O 'master', cambia esto según tu rama principal
+  workflow_dispatch: # Permite ejecutarlo manualmente desde la pestaña Actions
 
 jobs:
-  build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch')
+  build-and-deploy:
     runs-on: ubuntu-latest
-    name: Build and Deploy Job
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          submodules: true
 
-      - name: Build And Deploy
-        id: builddeploy
-        uses: Azure/static-web-apps-deploy@v1
+    steps:
+      # 1. Obtener el código
+      - name: Checkout GitHub Action
+        uses: actions/checkout@v4
+
+      # 2. Configurar el entorno de Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: "upload"
-          app_location: "/"
-          api_location: ""
-          output_location: "dist"
+          node-version: '20.x' # Cambia a la versión que use tu proyecto (18.x, 20.x, etc.)
+          cache: 'npm'
+
+      # 3. Instalar dependencias y construir
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build (if present)
+        run: npm run build --if-present
+
+      # Opcional: Ejecutar tests
+      # - name: Run tests
+      #   run: npm test
+
+      # 4. Desplegar a Azure Web App usando el Publish Profile
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v3
+        with:
+          # Proporciona el nombre de la app (mejor vía secret) para evitar errores de entrada requerida.
+          app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
+          # No hace falta el nombre de la app si usas el publish-profile, pero incluirlo evita validaciones que requieren app-name.
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: .
