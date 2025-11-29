@@ -8,11 +8,9 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Servir archivos estáticos
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// Cualquier otra ruta, devolver index.html
-app.get('*', (req, res) => {
+app.get(/.*/, (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
