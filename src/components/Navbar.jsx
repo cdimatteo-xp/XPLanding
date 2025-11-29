@@ -29,7 +29,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <div className="flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                         <div>
-                            <img src="/XPLanding/x_project_sa.png" alt="X Project Logo" style={{ width: '12rem', height: 'auto' }} />
+                            <img src="/x_project_sa.png" alt="X Project Logo" style={{ width: '12rem', height: 'auto' }} />
                             <span className="text-xs text-sky-600 font-semibold tracking-widest uppercase">Tecnología y Conocimiento</span>
                         </div>
                     </div>

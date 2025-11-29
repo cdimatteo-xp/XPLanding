@@ -5,6 +5,15 @@ Todos los cambios notables de este proyecto serán documentados en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/),
 y este proyecto adhiere a [Versionado Semántico](https://semver.org/lang/es/).
 
+## [1.3.1] - 2025-11-28
+
+### Modificado
+- **Configuración de Despliegue**: Se modificó `vite.config.js` para cambiar la base de despliegue de `/XPLanding/` a `/`, permitiendo el hosting en la raíz de un dominio.
+- **Rutas de Imágenes**: Se actualizaron las rutas de todas las imágenes en los componentes `About`, `Footer` y `Navbar` para que sean absolutas desde la raíz, eliminando el prefijo `/XPLanding/`.
+
+### Añadido
+- **Dependencia de Servidor**: Se agregó `express` al proyecto y un script `start` en `package.json` para servir los archivos estáticos, facilitando despliegues en entornos basados en Node.js.
+
 ## [1.3.0] - 2025-01-16
 
 ### Añadido - Nuevo Componente Industries
