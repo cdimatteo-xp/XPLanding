@@ -1,19 +1,21 @@
-// server.js
-const express = require('express');
-const path = require('path');
-const app = express();
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-// Servir los archivos estáticos de la carpeta dist
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+// Servir archivos estáticos
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// Manejar cualquier ruta que no sea un archivo estático y enviarla al index.html
-// Esto es vital para que funcione el React Router si lo usas
+// Cualquier otra ruta, devolver index.html
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-// Usar el puerto que asigna Azure (process.env.PORT)
-const port = process.env.PORT || 3000;
 app.listen(port, () => {
-    console.log(`Servidor corriendo en el puerto ${port}`);
+    console.log(`Server running on port ${port}`);
 });
