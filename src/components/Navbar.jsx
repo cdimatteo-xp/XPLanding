@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -14,20 +17,50 @@ const Navbar = () => {
     }, []);
 
     const navLinks = [
-        { name: 'Inicio', href: '#inicio' },
-        { name: 'Servicios', href: '#servicios' },
-        { name: 'Sistemas', href: '#sistemas' },
-        { name: 'Industrias', href: '#industrias' },
-        { name: 'Academia', href: '#capacitacion' },
-        { name: 'Nosotros', href: '#nosotros' },
+        { name: 'Inicio', path: '/', hash: '' },
+        { name: 'Servicios', path: '/', hash: '#servicios' },
+        { name: 'Sistemas', path: '/productos', hash: '' },
+        { name: 'Industrias', path: '/', hash: '#industrias' },
+        { name: 'Academia', path: '/academia', hash: '' },
+        { name: 'Nosotros', path: '/', hash: '#nosotros' },
     ];
+
+    const handleNavigation = (e, path, hash) => {
+        e.preventDefault();
+        setIsOpen(false);
+
+        if (path !== '/') {
+            navigate(path);
+            window.scrollTo(0, 0);
+            return;
+        }
+
+        if (location.pathname !== '/') {
+            navigate('/');
+            setTimeout(() => {
+                if (hash) {
+                    const element = document.getElementById(hash.replace('#', ''));
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }, 100);
+        } else {
+            if (hash) {
+                const element = document.getElementById(hash.replace('#', ''));
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+    };
 
     return (
         <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 shadow-md py-2' : 'bg-white/90 py-4'} backdrop-blur-md`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center">
                     {/* Logo */}
-                    <div className="flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                    <div className="flex items-center gap-2 cursor-pointer" onClick={(e) => handleNavigation(e, '/', '')}>
                         <div>
                             <img src="/x_project_sa.png" alt="X Project Logo" style={{ width: '12rem', height: 'auto' }} />
                             <span className="text-xs text-sky-600 font-semibold tracking-widest uppercase">Tecnología y Conocimiento</span>
@@ -37,11 +70,20 @@ const Navbar = () => {
                     {/* Desktop Menu */}
                     <div className="hidden lg:flex space-x-6 items-center">
                         {navLinks.map((link) => (
-                            <a key={link.name} href={link.href} className="text-slate-600 hover:text-blue-600 font-medium transition text-sm uppercase tracking-wide">
+                            <a 
+                                key={link.name} 
+                                href={link.path + link.hash} 
+                                onClick={(e) => handleNavigation(e, link.path, link.hash)}
+                                className="text-slate-600 hover:text-blue-600 font-medium transition text-sm uppercase tracking-wide cursor-pointer"
+                            >
                                 {link.name}
                             </a>
                         ))}
-                        <a href="#contacto" className="px-5 py-2.5 bg-slate-900 text-white rounded-full font-medium hover:bg-blue-600 transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm">
+                        <a 
+                            href="/contacto" 
+                            onClick={(e) => handleNavigation(e, '/contacto', '')}
+                            className="px-5 py-2.5 bg-slate-900 text-white rounded-full font-medium hover:bg-blue-600 transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm cursor-pointer"
+                        >
                             Contactar
                         </a>
                     </div>
@@ -62,17 +104,17 @@ const Navbar = () => {
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
-                                href={link.href}
+                                href={link.path + link.hash}
                                 className="block px-3 py-4 text-lg font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 border-b border-gray-50"
-                                onClick={() => setIsOpen(false)}
+                                onClick={(e) => handleNavigation(e, link.path, link.hash)}
                             >
                                 {link.name}
                             </a>
                         ))}
                         <a
-                            href="#contacto"
+                            href="/contacto"
                             className="block px-3 py-4 text-lg font-medium text-blue-600 font-bold hover:bg-slate-50 mt-4"
-                            onClick={() => setIsOpen(false)}
+                            onClick={(e) => handleNavigation(e, '/contacto', '')}
                         >
                             Contactar Ahora
                         </a>

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { 
     GraduationCap, Users, Video, Award, 
     ArrowRight, FileBadge, X, CheckCircle2,
     CalendarRange, MapPin, Laptop, MonitorPlay,
     BarChart3, ShieldCheck, Calculator, Search,
     BookOpen, AlertOctagon, Gavel, Fingerprint,
-    ShieldAlert, Landmark, ScanFace
+    ShieldAlert, Landmark, ScanFace,
+    ArrowLeft
 } from 'lucide-react';
 
 const Training = () => {
@@ -283,10 +285,16 @@ const Training = () => {
     };
 
     return (
-        <section id="capacitacion" className="py-24 bg-slate-50 relative overflow-hidden">
+        <section id="capacitacion" className="py-24 bg-slate-50 relative overflow-hidden min-h-screen">
             
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-8">
+                <div className="mb-8">
+                    <Link to="/" className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
+                        <ArrowLeft size={20} className="mr-2" />
+                        Volver al Inicio
+                    </Link>
+                </div>
+
                 {/* Header Académico */}
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-50 text-indigo-700 text-sm font-bold uppercase tracking-wide mb-6 border border-indigo-100">
@@ -445,14 +453,14 @@ const Training = () => {
                                 >
                                     Cerrar
                                 </button>
-                                <a 
-                                    href="#contacto"
+                                <Link 
+                                    to="/contacto"
                                     onClick={() => setSelectedCourse(null)}
                                     className="flex-1 sm:flex-none px-6 py-2.5 bg-slate-900 text-white font-bold rounded-lg hover:bg-blue-600 transition-colors shadow-lg hover:shadow-blue-600/20 flex items-center justify-center gap-2"
                                 >
                                     Solicitar Inscripción
                                     <ArrowRight size={16} />
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

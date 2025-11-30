@@ -5,6 +5,21 @@ Todos los cambios notables de este proyecto serán documentados en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/),
 y este proyecto adhiere a [Versionado Semántico](https://semver.org/lang/es/).
 
+## [1.4.0] - 2025-11-29
+
+### Añadido - Portal de Suscripción
+- **Nuevo Componente**: `SubscriptionPanel.jsx` para la gestión administrativa de clientes.
+- **Funcionalidades**:
+  - Visualización de créditos de horas (disponibles vs. totales).
+  - Estado de cuenta corriente con historial de transacciones.
+  - Alertas de vencimiento de pagos.
+  - Exportación de movimientos a CSV.
+  - Información del plan contratado y estado del servicio.
+
+### Modificado - Arquitectura y Navegación
+- **App.jsx**: Se implementó una lógica de "Layout Standalone" para ocultar la navegación pública (Navbar/Footer) tanto en `/campus` como en la nueva ruta `/suscripcion`.
+- **Campus.jsx**: Se agregó un enlace directo a "Mi Suscripción" en el pie del sidebar para facilitar el acceso al panel administrativo.
+
 ## [1.3.1] - 2025-11-28
 
 ### Modificado
