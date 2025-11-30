@@ -5,6 +5,19 @@ Todos los cambios notables de este proyecto serán documentados en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/),
 y este proyecto adhiere a [Versionado Semántico](https://semver.org/lang/es/).
 
+## [1.5.0] - 2025-11-30
+
+### Añadido - Nueva Experiencia de Usuario (Migration Phase 1)
+- **SimpleHome**: Nueva página de inicio simplificada (`landing/SimpleHome.jsx`) que divide el tráfico en dos grandes áreas: "Academia Profesional" y "Soluciones Corporativas".
+- **ProductDemo**: Nueva vista de demostración interactiva (`productos/ProductDemo.jsx`) que simula el entorno del software e-ACM (Dashboard, Riesgos, etc.).
+- **Acceso Portal Clientes**: Se incorporó un botón flotante en la Home para acceso directo al panel de suscripción.
+
+### Modificado
+- **Navegación Simplificada**: Se actualizó el `Navbar` para reflejar la nueva estructura, eliminando enlaces a secciones legadas (Servicios, Industrias) y centrando la navegación en "Academia" y "Software".
+- **Integración de Demo**: El componente `Products` ahora incluye un Call-to-Action "Ver Demo Interactiva" en la sección principal.
+- **Refactorización de Rutas**: Se actualizó `App.jsx` para establecer `SimpleHome` como ruta raíz `/` y se generó un respaldo de la configuración anterior en `App.backup.jsx`.
+- **Organización de Componentes**: Reestructuración del directorio `src/components/` en módulos funcionales (`landing`, `productos`, `suscripcion`, `academia`, `campus`, `layout`).
+
 ## [1.4.0] - 2025-11-29
 
 ### Añadido - Portal de Suscripción
