@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Logo } from './Logo';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -18,11 +19,8 @@ const Navbar = () => {
 
     const navLinks = [
         { name: 'Inicio', path: '/', hash: '' },
-        { name: 'Servicios', path: '/', hash: '#servicios' },
-        { name: 'Sistemas', path: '/productos', hash: '' },
-        { name: 'Industrias', path: '/', hash: '#industrias' },
         { name: 'Academia', path: '/academia', hash: '' },
-        { name: 'Nosotros', path: '/', hash: '#nosotros' },
+        { name: 'Software', path: '/productos', hash: '' },
     ];
 
     const handleNavigation = (e, path, hash) => {
@@ -62,7 +60,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <div className="flex items-center gap-2 cursor-pointer" onClick={(e) => handleNavigation(e, '/', '')}>
                         <div>
-                            <img src="/x_project_sa.png" alt="X Project Logo" style={{ width: '12rem', height: 'auto' }} />
+                            <Logo />
                             <span className="text-xs text-sky-600 font-semibold tracking-widest uppercase">Tecnología y Conocimiento</span>
                         </div>
                     </div>

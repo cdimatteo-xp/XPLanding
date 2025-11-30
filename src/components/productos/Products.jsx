@@ -11,7 +11,8 @@ import {
     ArrowRight,
     ListChecks,
     FolderOpenDot, // Icono para Papeles de Trabajo
-    ArrowLeft
+    ArrowLeft,
+    PlayCircle
 } from 'lucide-react';
 
 const Products = () => {
@@ -79,6 +80,12 @@ const Products = () => {
                                         <div className="w-8 h-8 rounded-full bg-lime-100 flex items-center justify-center text-lime-600 shrink-0"><ListChecks size={16}/></div>
                                         <span>Gestión Integral del Ciclo de Vida</span>
                                     </div>
+                                </div>
+                                <div className="mt-8">
+                                    <a href="https://eacmcore-demo-c6egefc2fqeufucc.brazilsouth-01.azurewebsites.net" className="inline-flex items-center gap-2 px-6 py-3 bg-lime-600 text-white font-bold rounded-lg hover:bg-lime-700 transition-colors shadow-lg shadow-lime-600/20" target="_blank" rel="noopener noreferrer">
+                                        <PlayCircle size={20} />
+                                        Ver Demo Interactiva
+                                    </a>
                                 </div>
                             </div>
 
@@ -186,6 +193,13 @@ const Products = () => {
                                         <span>Monitoreo de Incidentes</span>
                                     </div>
                                 </div>
+
+                                <div className="mt-8">
+                                    <a href="https://eacmcore-demo-c6egefc2fqeufucc.brazilsouth-01.azurewebsites.net" className="inline-flex items-center gap-2 px-6 py-3 bg-amber-600 text-white font-bold rounded-lg hover:bg-amber-700 transition-colors shadow-lg shadow-amber-600/20" target="_blank" rel="noopener noreferrer">
+                                        <PlayCircle size={20} />
+                                        Ver Demo Interactiva
+                                    </a>
+                                </div>
                             </div>
 
                             <div className="lg:col-span-8 space-y-4">
@@ -290,6 +304,13 @@ const Products = () => {
                                         <span>Monitoreo Transaccional</span>
                                     </div>
                                 </div>
+
+                                <div className="mt-8">
+                                    <a href="https://eacmcore-demo-c6egefc2fqeufucc.brazilsouth-01.azurewebsites.net" className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-600 text-white font-bold rounded-lg hover:bg-cyan-700 transition-colors shadow-lg shadow-cyan-600/20" target="_blank" rel="noopener noreferrer">
+                                        <PlayCircle size={20} />
+                                        Ver Demo Interactiva
+                                    </a>
+                                </div>
                             </div>
 
                             <div className="lg:col-span-8 space-y-4">
@@ -393,6 +414,13 @@ const Products = () => {
                                         <div className="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 shrink-0"><FileCheck2 size={16}/></div>
                                         <span>Motor Contable Automático</span>
                                     </div>
+                                </div>
+
+                                <div className="mt-8">
+                                    <a href="https://eacmcore-demo-c6egefc2fqeufucc.brazilsouth-01.azurewebsites.net" className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-700 transition-colors shadow-lg shadow-purple-600/20" target="_blank" rel="noopener noreferrer">
+                                        <PlayCircle size={20} />
+                                        Ver Demo Interactiva
+                                    </a>
                                 </div>
                             </div>
 

@@ -8,7 +8,7 @@ import {
     CheckCircle2, Search, ExternalLink
 } from 'lucide-react';
 
-const Training2 = () => {
+const Training = () => {
     const [activeTab, setActiveTab] = useState('webinars');
 
     // Mock Data for Public Resources
@@ -376,4 +376,4 @@ const Training2 = () => {
     );
 };
 
-export default Training2;
+export default Training;
